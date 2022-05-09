@@ -1,12 +1,13 @@
-# Cleans up the raw listener response data.
+# Cleans up the raw listener data
 
+import sys
 import pandas as pd
 from read_phones import speaker_re, sentence_re
 import json
 
 # Reads in raw demographic data from file, drops the miscellaneous rows that
 # correspond to example data that was not from this experiment
-df = pd.read_csv("listener_data.csv", names=['HASH', 'EXP', 'LISTENER_ID',
+df = pd.read_csv(sys.argv[1], names=['HASH', 'EXP', 'LISTENER_ID',
     'BLOCK', 'AGE', 'GENDER', 'PRONOUNS', 'RACE', 'SEXUAL_ORIENTATION',
     'LIVE_REGION', 'URBAN', 'ENGLISH_BG', 'GREW_IN_US', 'GREW_UP_REGION',
     'LGBTQ', 'FRIENDS', 'SPACES', 'ACCURACY'])
@@ -32,7 +33,7 @@ for feature in df.columns:
 numeric_df.to_csv("listener_data_numeric.csv", index=False)
 
 # Cleans up the listener rating data and writes out to new file
-responses_df = pd.read_csv("listener_responses.csv")
+responses_df = pd.read_csv(sys.argv[2])
 responses_df.rename(columns = {"SubjID":"LISTENER_ID", "file1":"FILE", "response":"RATING", "status":"STATUS"}, inplace = True)
 responses_df = responses_df.filter(items=["LISTENER_ID", "FILE", "RATING", "STATUS"])
 responses_df = responses_df[responses_df["STATUS"] == "OK"]

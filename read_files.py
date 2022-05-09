@@ -1,6 +1,7 @@
 # Defines some helpful functions and expressions for working with the .wav and
-# .TextGrid files
+# .TextGrid files, for use in read_phones and read_features
 
+import sys
 import glob
 from parselmouth import Sound
 from textgrid import TextGrid
@@ -20,18 +21,18 @@ def name_of(phone):
         return name[:-1]
     return name
 
-def zip_files(path="./speaker_data/"):
+def zip_files():
     """
     Generator object that yields as a tuple:
         - The speaker ID as a number
         - The sentence ID as a number
         - The .wav file as a sound object
         - The .TextGrid file as a TextGrid object
-    For all .wav/.TextGrid file pairs in PATH.
-
-    This is a convenience function that allows us to mass-read and organize all
-    the information from all the .wav and .TextGrid files in PATH.
+    For all .wav/.TextGrid file pairs in the data directory.
     """
+
+    # Collects the path to speaker files as a command-line argument
+    path=sys.argv[1]
 
     # Reads in all .wav and .TextGrid files
     wav_files = glob.glob(path + "*.wav")

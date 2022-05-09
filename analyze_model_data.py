@@ -1,4 +1,4 @@
-# Generates some visualizations if the model outputs, for the purposes of
+# Generates some visualizations of the model outputs, for the purposes of
 # comparing quality of fit
 
 import pandas as pd

@@ -1,10 +1,10 @@
 # Generates tables of features per speaker per sentence based on the existing
-# wav and tg files
+# .wav and .TextGrid files
 
 import csv
 import os
 import json
-from file_functions import *
+from read_files import *
 
 # Loads in dict of all the phones
 phones_file = open('phones.json')

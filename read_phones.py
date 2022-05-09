@@ -1,8 +1,9 @@
 # Generates a complete set of all the phones across all transcriptions, for use
 # in feature extraction
 
+import sys
 import json
-from file_functions import *
+from read_files import *
 
 # Extracts all the phones as a set
 all_phones = set([name_of(phone) for _, _, _, tg in zip_files()

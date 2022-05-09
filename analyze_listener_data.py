@@ -1,7 +1,6 @@
 # Generates some visualizations of the listener data, without acoustic data on
 # speakers or any of the information from running models
 
-import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -35,7 +34,7 @@ def plot_by(df, group_by, y_label):
     plt.tight_layout()
 
 # Input path to the csv you want to read as an argument
-df = pd.read_csv(sys.argv[1])
+df = pd.read_csv("listener_responses_cleaned.csv")
 
 plot_by(df, 'SPEAKER_ID', "Speaker ID")
 plt.savefig("ratings_by_speaker.png")
