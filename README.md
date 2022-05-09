@@ -20,13 +20,13 @@ they make their judgements.
 The following is a list of the all files contained in this repository:
 
 * `read_files.py` - Defines helpful functions and expressions for working with
-the .wav and .TextGrid files, for use in read_phones and read_features
+the `.wav` and `.TextGrid` files, for use in read_phones and read_features
 
 * `read_phones.py` - Generates a complete set of all the phones across all
 transcriptions, for use in feature extraction
 
 * `read_features.py` - Generates tables of features per speaker per sentence
-based on the existing .wav and .TextGrid files
+based on the existing `.wav` and `.TextGrid` files
 
 * `read_listener_data.py` - Cleans up the raw listener data
 
@@ -46,12 +46,12 @@ the purposes of comparing quality of fit
 
 These scripts read data from three sources:
 
-* A local directory containing .wav and corresponding .TextGrid files for all
+* A local directory containing `.wav` and corresponding `.TextGrid` files for all
 speaker/sentence combinations
 
-* A .csv file containing survey responses of demographic listener information
+* A `.csv` file containing survey responses of demographic listener information
 
-* A .csv file containing ratings from the listener task
+* A `.csv` file containing ratings from the listener task
 
 Paths to these sources are included as command-line arguments to any of the
 `read` scripts, so we would run any of the read scripts as below:
