@@ -1,8 +1,18 @@
-from tkinter import VERTICAL
+# Generates some visualizations of the listener data, without acoustic data on
+# speakers or any of the information from running models
+
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 
 def plot_by(df, group_by, y_label):
+    """
+    Convenience function that plots the data in DF when sorted by GROUP_BY (we
+    either group by the speaker, the listener, or the sentence). Y_LABEL is the
+    label to apply to the y-axis.
+    """
+
+    # Calculate means and standard deviations for the data
     means = df.groupby([group_by])['RATING'].mean().reset_index()
     means.rename(columns={'RATING':'MEAN_RATING'}, inplace=True)
     stds = df.groupby([group_by])['RATING'].std().reset_index()
@@ -10,6 +20,7 @@ def plot_by(df, group_by, y_label):
     stats = pd.merge(means, stds, on=group_by)
     stats.sort_values(by='MEAN_RATING', inplace=True, ascending=False)
 
+    # Plot the means as dots and standard deviations as whiskers
     plt.rcParams['figure.figsize'] = [6, 5]
     plt.errorbar(stats['MEAN_RATING'], range(len(stats)),
             xerr=stats['STD_RATING'], fmt='o', color='green', 
@@ -23,7 +34,8 @@ def plot_by(df, group_by, y_label):
         plt.gca().spines[pos].set_visible(False)
     plt.tight_layout()
 
-df = pd.read_csv("listener_responses_cleaned.csv")
+# Input path to the csv you want to read as an argument
+df = pd.read_csv(sys.argv[1])
 
 plot_by(df, 'SPEAKER_ID', "Speaker ID")
 plt.savefig("ratings_by_speaker.png")
