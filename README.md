@@ -69,30 +69,7 @@ python3 read_listener_data.py PATH_TO_DEMOGRAPHIC_DATA PATH_TO_RESPONSE_DATA
 ```
 
 All other scripts can be run as-is. The most important thing to note is that
-these scripts should be run *in the order seen in the first section*---for the
+these scripts should be run *in the order seen in the first section*—for the
 most part, each script will generate files that are necessary for the next
 script to run. These components were all modularized for ease of tweaking
 various parts of the pipeline.
-
-
-## MIT License
-
-Copyright (c) 2022 Cooper Anatolij Bedin
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
