@@ -2,8 +2,8 @@
 
 This is a collection of scripts I used for analysis purposes in my undergraduate
 honors thesis, "(A Computational Approach to) Acoustic Cues of Queer Speech".
-These scripts are specific to my project, but can be easily tweaked or used in
-part for similar sociolinguistic experiments.
+These scripts are specific to my project, but can be tweaked or used in
+part for similar experiments.
 
 In this project, an experiment was run where a group of speakers were asked to
 record themselves reading aloud a list of prescribed sentences from the MOCHA
@@ -44,7 +44,15 @@ the purposes of comparing quality of fit
 
 ## Using the scripts
 
-These scripts read data from three sources:
+First, create a virtual environment and install the necessary packages.
+
+```
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -r requirements.txt
+```
+
+The scripts in this repository read data from three sources:
 
 * A local directory containing `.wav` and corresponding `.TextGrid` files for all
 speaker/sentence combinations
