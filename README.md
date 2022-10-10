@@ -1,4 +1,4 @@
-# Scripts for Acoustic Analysis of Queer Speech
+# Scripts for Applying Machine Learning to Sociophonetic Analysis
 
 This is a collection of scripts I used for analysis purposes in my undergraduate
 honors thesis, "(A Computational Approach to) Acoustic Cues of Queer Speech".
